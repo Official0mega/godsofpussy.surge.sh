@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr"  data-config='{"twitter":0,"plusone":0,"facebook":0,"style":"orange"}'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+	<meta name="keywords" content="chat, chats, terra chat, terrachat, chat terra, chat de terra, chat hispano, chathispano, hispano chat, hispanochat, chatear, salas de chat, chats,chat gratis, chat en español, chat por provincias, chat por paises, chat por tematicas,chat sin registro, chat con gente, chat movistar,chat orange,latinchat, latin chat, inforchat, chat chueca,chatzona,gentechats" />
+	<meta name="author" content="Administrador" />
+	<meta name="description" content="Portal de chat organizado por temáticas y zonas geográficas." />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>Salas temáticas</title>
+	<link href="https://www.terrachat.es/component/search/?Itemid=217&amp;format=opensearch" rel="search" title="Buscar Terra Chat - Chat GRATIS sin REGISTRO en ESPAÑOL" type="application/opensearchdescription+xml" />
+
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/salas-tematicas.css">
+</head>
+<body>
+    <div id="overlay"></div>
+    
+            
+    
+    
+    <header class="navbar"> 
+        <div class="container"> 
+             
+
+            <a href="/" class="logo">
+    <img src="./assets/images/logo.png" alt="TerraChat Logo">
+</a>
+        <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="./">Inicio</a></li>
+                    <li><a href="./salas-tematicas">Salas Temáticas</a></li>
+                    <li><a href="./salas-regionales">Salas Regionales</a></li>
+                    <li><a href="./salas-paises">Salas Países</a></li>
+                    <li><a href="./salas-lgtb">Salas LGTB</a></li>
+                    <li><a href="./faq">FAQ</a></li>
+                    <li><a href="./consejos">Consejos</a></li>
+                    <li><a href="http://www.movilchat.net" target="_blank" rel="noopener noreferrer">Chat Móvil</a></li>
+                </ul> 
+
+                <div class="search-container">
+                    <form action="./component/search/" method="get" class="search-form">
+                        <button id="search-icon" aria-label="Abrir buscador"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg> 
+                        </button> 
+                        <input type="search" id="search-bar" name="buscar" class="search-input" required placeholder="Buscar sala..."> 
+                    </form>
+                </div> 
+             
+
+            </nav>
+
+           <button class="hamburger" id="hamburger" aria-label="Menú"> 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+            </button> 
+        </div> 
+    </header>
+
+
+    <main>
+        <section class="salas-list-section">
+            <div class="container">
+
+                
+                <ul class="breadcrumb">
+                    <li><a href="./">Inicio</a></li>
+                    <li class="active"><span>Salas temáticas</span></li>
+                </ul>
+
+                <h2 class="title-h2">Salas Temáticas</h2>
+
+                <div class="tematicas-grid">
+                    <div class="sala-card-list">
+                        <h3>SALAS GENÉRICAS</h3>
+                        <ul class="chat-links-list">
+                            <li><a href="./chats/tematicos/chat-amistad.html" target="_blank">Chat Amistad</a></li>
+                            <li><a href="./chats/tematicos/chat-amor.html" target="_blank">Chat Amor</a></li>
+                            <li><a href="./chats/tematicos/chat-android.html" target="_blank">Chat Android</a></li>
+                            <li><a href="./chats/tematicos/chat-ayuda-internet.html" target="_blank">Chat Ayuda Internet</a></li>
+                            <li><a href="./chats/tematicos/chat-ayuda-chat.html" target="_blank">Chat Ayuda Chat</a></li>
+                            <li><a href="./chats/tematicos/chat-camelot.html" target="_blank">Chat Camelot</a></li>
+                            <li><a href="./chats/tematicos/chat-cine.html" target="_blank">Chat Cine</a></li>
+                            <li><a href="./chats/tematicos/chat-cocina.html" target="_blank">Chat Cocina</a></li>
+                            <li><a href="./chats/tematicos/chat-f1.html" target="_blank">Chat F1</a></li>
+                            <li><a href="./chats/tematicos/chat-filosofia.html" target="_blank">Chat Filosofía</a></li>
+                            <li><a href="./chats/tematicos/chat-fotografia.html" target="_blank">Chat Fotografía</a></li>
+                            <li><a href="./chats/tematicos/chat-futbol.html" target="_blank">Chat Fútbol</a></li>
+                            <li><a href="./chats/tematicos/chat-gran-hermano.html" target="_blank">Chat Gran Hermano</a></li>
+                            <li><a href="./chats/tematicos/chat-iphone.html" target="_blank">Chat Iphone</a></li>
+                            <li><a href="./chats/tematicos/chat-ligar.html" target="_blank">Chat Ligar</a></li>
+                            <li><a href="./chats/tematicos/chat-linux.html" target="_blank">Chat Linux</a></li>
+                            <li><a href="./chats/tematicos/chat-literatura.html" target="_blank">Chat Literatura</a></li>
+                            <li><a href="./chats/tematicos/chat-mac.html" target="_blank">Chat Mac</a></li>
+                            <li><a href="./chats/tematicos/chat-musica.html" target="_blank">Chat Música</a></li>
+                            <li><a href="./chats/tematicos/chat-nudismo.html" target="_blank">Chat Nudismo</a></li>
+                            <li><a href="./chats/tematicos/chat-poesia.html" target="_blank">Chat Poesía</a></li>
+                            <li><a href="./chats/tematicos/chat-politica.html" target="_blank">Chat Política</a></li>
+                            <li><a href="./chats/tematicos/chat-programacion.html" target="_blank">Chat Programación</a></li>
+                            <li><a href="./chats/tematicos/chat-psicologia.html" target="_blank">Chat Psicología</a></li>
+                            <li><a href="./chats/tematicos/chat-trivial.html" target="_blank">Chat Trivial</a></li>
+                            <li><a href="./chats/tematicos/chat-hispano.html" target="_blank">Chat hispano</a></li>
+                            <li><a href="./chats/tematicos/quierochat.html" target="_blank">QuieroChat</a></li>
+                            <li><a href="./chats/tematicos/inforchat.html" target="_blank">InforChat</a></li>
+                            <li><a href="./chats/tematicos/hispachat.html" target="_blank">HispaChat</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sala-card-list">
+                        <h3>SALAS POR EDADES</h3>
+                        <ul class="chat-links-list">
+                            <li><a href="./chats/tematicos/chat-18-25.html" target="_blank">Chat De 18 a 25</a></li>
+                            <li><a href="./chats/tematicos/chat-mas-de-30.html" target="_blank">Chat Más de 30</a></li>
+                            <li><a href="./chats/tematicos/chat-mas-de-40.html" target="_blank">Chat Más de 40</a></li>
+                            <li><a href="./chats/tematicos/chat-mas-de-50.html" target="_blank">Chat Más de 50</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sala-card-list">
+                        <h3>SALAS PARA ADULTOS</h3>
+                        <ul class="chat-links-list">
+                            <li><a href="./chats/tematicos/chat-cibersexo.html" target="_blank">Chat Cibersexo</a></li>
+                            <li><a href="./chats/tematicos/chat-contactos.html" target="_blank">Chat Contactos</a></li>
+                            <li><a href="./chats/tematicos/chat-cornudos.html" target="_blank">Chat Cornudos</a></li>
+                            <li><a href="./chats/tematicos/chat-mazmorra.html" target="_blank">Chat Mazmorra</a></li>
+                            <li><a href="./chats/tematicos/chat-parejas.html" target="_blank">Chat Parejas</a></li>
+                            <li><a href="./chats/tematicos/chat-sexo.html" target="_blank">Chat Sexo</a></li>
+                            <li><a href="./chats/tematicos/chat-sexo-casadas.html" target="_blank">Chat Sexo Casadas</a></li>
+                            <li><a href="./chats/tematicos/chat-sexo-telefonico.html" target="_blank">Chat Sexo Telefónico</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            
+            <div class="footer-links">
+        <a href="./aviso-legal">Aviso Legal</a>
+        <a href="./politicas-de-privacidad">Políticas de privacidad</a>
+        <a href="./acerca-de-terrachat">Acerca de TerraChat</a>
+        <a href="./mapa-del-sitio">Mapa del sitio</a>
+        <a href="./contacto">Contacto</a>
+        </div>
+            <div class="footer-copy">
+                Copyright © 2015 TerraChat
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+
+
+</body>
+</html>

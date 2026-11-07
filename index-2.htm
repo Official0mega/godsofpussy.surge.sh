@@ -1,0 +1,469 @@
+<!-- ï»¿/*<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Este sitio web utiliza cookies para asegurarse de obtener la mejor experiencia en nuestro sitio web","dismiss":"Entendido!","learnMore":"Leer mas","link":"https://www.chatsfriends.com/politica-de-privacidad.php","theme":"light-bottom"};
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>*/ -->
+
+
+<!--  <script type="text/javascript" src="https://www.chatsfriends.com/cs-cookies.min.js"></script>
+        <script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"dark","language":"es","website_name":"ChatsFriends","change_preferences_selector":"","cookies_policy_url":"https://www.chatsfriends.com/politica-de-privacidad.php"});
+});
+</script>  -->
+<!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://cmp.inmobi.com'
+    .concat('/choice/', 'YGf4cj5f_vzS6', '/', host, '/choice.js?tag_version=V3');
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        if(args[0] === 'init' && typeof args[3] === 'object') {
+          args[3] = Object.assign(args[3], { tag_version: 'V3' });
+        }
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  function makeGppStub() {
+    const CMP_ID = 10;
+    const SUPPORTED_APIS = [
+      '2:tcfeuv2',
+      '6:uspv1',
+      '7:usnatv1',
+      '8:usca',
+      '9:usvav1',
+      '10:uscov1',
+      '11:usutv1',
+      '12:usctv1'
+    ];
+
+    window.__gpp_addFrame = function (n) {
+      if (!window.frames[n]) {
+        if (document.body) {
+          var i = document.createElement("iframe");
+          i.style.cssText = "display:none";
+          i.name = n;
+          document.body.appendChild(i);
+        } else {
+          window.setTimeout(window.__gpp_addFrame, 10, n);
+        }
+      }
+    };
+    window.__gpp_stub = function () {
+      var b = arguments;
+      __gpp.queue = __gpp.queue || [];
+      __gpp.events = __gpp.events || [];
+
+      if (!b.length || (b.length == 1 && b[0] == "queue")) {
+        return __gpp.queue;
+      }
+
+      if (b.length == 1 && b[0] == "events") {
+        return __gpp.events;
+      }
+
+      var cmd = b[0];
+      var clb = b.length > 1 ? b[1] : null;
+      var par = b.length > 2 ? b[2] : null;
+      if (cmd === "ping") {
+        clb(
+          {
+            gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+            cmpStatus: "stub", // possible values: stub, loading, loaded, error
+            cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+            signalStatus: "not ready", // possible values: not ready, ready
+            supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+            cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+            sectionList: [],
+            applicableSections: [-1],
+            gppString: "",
+            parsedSections: {},
+          },
+          true
+        );
+      } else if (cmd === "addEventListener") {
+        if (!("lastId" in __gpp)) {
+          __gpp.lastId = 0;
+        }
+        __gpp.lastId++;
+        var lnr = __gpp.lastId;
+        __gpp.events.push({
+          id: lnr,
+          callback: clb,
+          parameter: par,
+        });
+        clb(
+          {
+            eventName: "listenerRegistered",
+            listenerId: lnr, // Registered ID of the listener
+            data: true, // positive signal
+            pingData: {
+              gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+              cmpStatus: "stub", // possible values: stub, loading, loaded, error
+              cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+              signalStatus: "not ready", // possible values: not ready, ready
+              supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+              cmpId: CMP_ID, // list of supported APIs
+              sectionList: [],
+              applicableSections: [-1],
+              gppString: "",
+              parsedSections: {},
+            },
+          },
+          true
+        );
+      } else if (cmd === "removeEventListener") {
+        var success = false;
+        for (var i = 0; i < __gpp.events.length; i++) {
+          if (__gpp.events[i].id == par) {
+            __gpp.events.splice(i, 1);
+            success = true;
+            break;
+          }
+        }
+        clb(
+          {
+            eventName: "listenerRemoved",
+            listenerId: par, // Registered ID of the listener
+            data: success, // status info
+            pingData: {
+              gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+              cmpStatus: "stub", // possible values: stub, loading, loaded, error
+              cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+              signalStatus: "not ready", // possible values: not ready, ready
+              supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+              cmpId: CMP_ID, // CMP ID
+              sectionList: [],
+              applicableSections: [-1],
+              gppString: "",
+              parsedSections: {},
+            },
+          },
+          true
+        );
+      } else if (cmd === "hasSection") {
+        clb(false, true);
+      } else if (cmd === "getSection" || cmd === "getField") {
+        clb(null, true);
+      }
+      //queue all other commands
+      else {
+        __gpp.queue.push([].slice.apply(b));
+      }
+    };
+    window.__gpp_msghandler = function (event) {
+      var msgIsString = typeof event.data === "string";
+      try {
+        var json = msgIsString ? JSON.parse(event.data) : event.data;
+      } catch (e) {
+        var json = null;
+      }
+      if (typeof json === "object" && json !== null && "__gppCall" in json) {
+        var i = json.__gppCall;
+        window.__gpp(
+          i.command,
+          function (retValue, success) {
+            var returnMsg = {
+              __gppReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: i.callId,
+              },
+            };
+            event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+          },
+          "parameter" in i ? i.parameter : null,
+          "version" in i ? i.version : "1.1"
+        );
+      }
+    };
+    if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+      window.__gpp = window.__gpp_stub;
+      window.addEventListener("message", window.__gpp_msghandler, false);
+      window.__gpp_addFrame("__gppLocator");
+    }
+  };
+
+  makeGppStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+
+<!DOCTYPE html><html lang="es"><head><title>ðŸ¥‡ Chat Gratis Sin Registro - Chatear Online</title><meta name="description" content="Â¿Quieres chatear con gente nueva? &#x27a0 Entra a nuestro chat gratis, donde podras pasar un buen rato chateando con personas de todo el mundo" /><link href="https://www.chatsfriends.com/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv='Content-Language' content='es'/> <link rel="canonical" href="https://www.chatsfriends.com"/> <style>.header2{padding:0em 0 0;border-bottom:3px solid#FF8000;background:black;}
+.join {
+background: white; padding: 0px 0px 10px; background-color: #F5F5F5; border-bottom: 3px solid#FF8000; text-align: center;
+}
+.textochat {margin-top: 10px;margin-left: 10px;margin-right: 10px;}
+.textochat1 {float:right;margin-top:10px}
+@media (min-width:992px) .container{ width:970px; }
+@media (min-width: 1200px)
+.container { width: 1170px;
+}
+.header-top { padding: 0em 0;
+}
+.top-menu { float: left;
+}
+.logo { float: left;
+}
+.logo span { font-weight: 500;
+}
+.chats { font-size: 2em; color: white;
+}
+.friends { font-size: 2em; color: orange;
+}
+.menu { float: left; padding: 10px 30px;
+}
+.services-section { padding: 0em 0;
+}
+@media (min-width: 992px)
+.col-md-5 { width: 31.66666667%;
+}
+.sprite { background-image: url(https://www.chatsfriends.com/images/spritesheet.png); background-repeat: no-repeat; display: block; float: left; margin-right: 10px;
+}
+.sprite-colombia { width: 28px; height: 20px; background-position: 0 0;
+}
+.sprite-de-13-a-18-anos { width: 28px; height: 20px; background-position: 0 -20px;
+}
+.sprite-madrid { width: 28px; height: 20px; background-position: 0 -40px;
+}
+.sprite-chile { width: 28px; height: 20px; background-position: 0 -60px;
+}
+.sprite-argentina { width: 28px; height: 20px; background-position: 0 -80px;
+}
+.sprite-camara { width: 28px; height: 20px; background-position: 0 -100px;
+}
+.sprite-queretaro { width: 28px; height: 20px; background-position: 0 -120px;
+}
+.sprite-chicas { width: 28px; height: 20px; background-position: 0 -140px;
+}
+.sprite-bogota { width: 28px; height: 20px; background-position: 0 -160px;
+}
+.sprite-mexico { width: 28px; height: 20px; background-position: 0 -180px;
+}
+.sprite-ligar { width: 28px; height: 20px; background-position: 0 -200px;
+}
+.sprite-amistad { width: 28px; height: 20px; background-position: 0 -220px;
+}
+.sprite-espana { width: 28px; height: 20px; background-position: 0 -240px;
+}
+.sprite-mas-de-40 { width: 28px; height: 20px; background-position: 0 -260px;
+}
+.sprite-ninos { width: 28px; height: 20px; background-position: 0 -280px;
+}
+.sprite-mas-de-60 { width: 28px; height: 20px; background-position: 0 -260px;
+}
+.bg-label { font-family: "HelveticaNeueLight", "Arial", sans-serif; font-size: 20px; color: black; display: block; margin-top: 0px;
+}
+}
+.bg-label { color: #fff; margin:10px;
+}
+#nickname {
+width:50%; height: 50px; background-color: #fff; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+border: 2px solid #ff7e00; font-family: "HelveticaNeueLight", "Arial", sans-serif; font-size: 16px; color: #555555; padding: 0px 10px; margin-top: -3px;
+}
+h1, .h1 { font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 { margin-top: 20px; margin-bottom: 10px;
+}
+.projects-section { padding: 0.1em 0;
+}
+@media (min-width: 992px)
+.col-md-7 { width: 68.33333333%;
+}
+@media (min-width: 992px)
+.col-md-5 { width: 31.66666667%;
+}
+.button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; margin-bottom: 15px;
+}
+.button { padding: 12px 13px; text-align: center; background-color: #ff6800; border: none; font-size: 18px; font-weight: 700; font-family: "HelveticaNeueLight", "Arial", sans-serif; color: #fff; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; margin-top: -3px; margin-left: 4px; margin-bottom: 15px;
+}
+@media only screen and (max-width:640px){
+h1{font-size:1.8em;}
+h3 {font-size: 1.3em;}
+h2 {font-size: 1.2em;}
+.bg-label {font-size: 1em;}
+.friends {font-size: 2em;color: orange;}
+.chats {font-size: 2em;color: white;}
+.textochat {width: 100%; float: left;margin-top: 10px;margin-left: 0px;margin-right: 5px; margin-bottom: 20px;}
+.join {
+}
+}
+.services-section h3 { font-size: 1em;
+}
+.category { display: inline-block; background: #6bd04e; padding: 0px 10px; margin-right: 5px; line-height: 20px; font-family: "Arial",sans-serif; font-size: 11px; color: #fff; text-align: center; text-transform: lowercase; position: absolute; margin-top: 54px;
+}
+.cajanoticia {margin-bottom: 5px;height: 120px;border: 1px solid #e5e5e5;border-left: 0px;}
+.cajamargen {padding: 10px;}
+.cajacategoria {float: left;width:80px;height:60px;margin:10px}
+.top-menu ul li a { font-size: 18px; text-decoration: none; text-transform: capitalize; color: white; font-family: 'Exo 2', sans-serif;
+}
+.container {width:100%;}
+.top-menu { float: none;
+}
+@media (min-width: 992px){
+.col-md-7 { width: 80.33333333%;
+}
+.col-md-5 { width: 18.66666667%;
+}
+}
+#list4 ul li a { max-width: 100%; float: none;
+}</style><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-204821732-1']); _gaq.push(['_trackPageview']); setTimeout("_gaq.push(['_trackEvent', '15_seconds', 'read'])",15000); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script><!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script> (adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-9438374772148922", enable_page_level_ads: true }); --></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4117030517104695" crossorigin="anonymous"></script></head><body><nav> <div class="header"> <div class="container"> <div class="header-top"> <div class="top-menu"><div clasS="logo"><a href="/"><img src="https://www.chatsfriends.com/logo.png" width="317" height="52" alt="chatsfriends.com"></a></div><div clasS="menu"><nav><ul> <li><a href="https://www.chatsfriends.com" class="active">Inicio</a></li> <li><a href="https://www.chatsfriends.com/chat-amistad" title="chat amistad">Amistad</a></li> <li><a href="https://www.chatsfriends.com/chat-espana" title="chat espana">EspaÃ±a</a></li> <li><a href="https://www.chatsfriends.com/chat-mexico" title="chat mexico">Mexico</a></li> </ul></nav></div> </div> <div class="clearfix"></div></div></div> </div></nav> <div class="services-section"><div class="clearfix"></div> <div class="container"><div class="content"><div class="banner-section"> <div class="col-md-7 banner-gridimg"><div class="projects-section"><article><header><h1 id="chat gratis">Chat gratis en EspaÃ±ol</h1></header><div class="Projects-grids"><div class="textochat"><section><p>Bienvenido al chat gratis de <strong>chatsfriends</strong>, en nuestra web podras disfrutar de las 1000 mejores chats de habla hispana en las que podras <strong>chatear con gente de todas las edades</strong> y de todo el mundo. Entra y empieza a divertirte!</p><p>Para acceder a la sala, ponga su apodo y pulse el boton para poder entrar al canal principal.</p></section></div><div style="margin-top:10px;"> <div class="join"> <div style="padding: 0px 20px;"> <p class="bg-label">Â¿Preparado para pasarlo bien?</p><form method="post" action="https://www.chatsfriends.com/avatar/perfil.php"><input type="hidden" name="sala" value="chicaslocas,chatsfriends.com"/><input type="hidden" name="cat" value="" /><input type="hidden" name="canal" value="" /><input type="text" id="nickname" name="nick" placeholder="Â¿ Nick ?"><button type="submit" class="button" > Entrar al Chat</button></form></div></div></div><div style="clear: both"></div><div class="textochat1"><style>.salas-responsive { width: 300px; height: 250px; }
+@media(min-width: 500px) { .salas-responsive { width: 300px; height: 250px; } }
+@media(min-width: 800px) { .salas-responsive { width: 336px; height: 280px; } }</style><!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --><!-- 336x280, creado 29/07/10 --><!-- <ins class="adsbygoogle salas-responsive" style="display:inline-block;" data-ad-client="ca-pub-9438374772148922" data-ad-slot="3732924984"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> --><!-- <div id="82526-2"><script defer src="//ads.themoneytizer.com/s/gen.js?type=2"></script><script defer src="//ads.themoneytizer.com/s/requestform.js?siteId=82526&formatId=2"></script></div> --></div><h3>Las mas visitadas</h3><nav> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">EspaÃ±a</h3> <hr> <ul> <li><a href="https://www.chatsfriends.com/chat-madrid" title="madrid">chat Madrid</a></li> <li><a href="https://www.chatsfriends.com/chat-barcelona" title="barcelona">chat Barcelona</a></li> <li><a href="https://www.chatsfriends.com/chat-sevilla" title="sevilla">chat Sevilla</a></li> <li><a href="https://www.chatsfriends.com/chat-valencia" title="valencia">chat Valencia</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Argentina</h3><hr> <ul> <li><a href="https://www.chatsfriends.com/chat-buenos-aires" title="buenos aires">Buenos aires</a></li> <li><a href="https://www.chatsfriends.com/chat-la-plata" title="la plata">La plata</a></li> <li><a href="https://www.chatsfriends.com/chat-neuquen" title="neuquen">Neuquen</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Mexico</h3><hr> <ul> <li><a href="https://www.chatsfriends.com/chat-cancun" title="cancun">Cancun</a></li> <li><a href="https://www.chatsfriends.com/chat-ciudad-de-mexico" title="mexido df">Mexido D.F</a></li> <li><a href="https://www.chatsfriends.com/chat-queretaro" title="Queretaro">Queretaro</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Top Chats</h3><hr> <ul> <li><a href="https://www.chatsfriends.com/chat-camara" title="camara">chat Camara</a></li> <li><a href="https://www.chatsfriends.com/chat-amistad" title="amistad">chat Amistad</a></li> <li><a href="https://www.chatsfriends.com/chat-mas-de-40" title="mas de 40">chat Mas de 40</a></li> <li><a href="https://www.chatsfriends.com/chat-mas-de-30" title="madrid">chat Mas de 30</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Colombia</h3><hr> <ul> <li><a href="https://www.chatsfriends.com/chat-cali" title="cali">Cali</a></li> <li><a href="https://www.chatsfriends.com/chat-barranquilla" title="barranquilla">Barranquilla</a></li> <li><a href="https://www.chatsfriends.com/chat-medellin" title="medellin">Medellin</a></li> <li><a href="https://www.chatsfriends.com/chat-bogota" title="bogota">Bogota</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Ligar</h3> <hr> <ul> <li><a href="https://www.chatsfriends.com/chat-encontrar-pareja" title="encontrar pareja">Encontrar pareja</a></li> <li><a href="https://www.chatsfriends.com/chat-citas" title="citas">Citas</a></li> <li><a href="https://www.chatsfriends.com/chat-chicas" title="chicas">Chicas</a></li> <li><a href="https://www.chatsfriends.com/chat-ligar" title="ligar">Ligar</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Top Latinos</h3><hr> <ul> <li><a href="https://www.chatsfriends.com/chat-chile" title="chile">Chile</a></li> <li><a href="https://www.chatsfriends.com/chat-colombia" title="Colombia">Colombia</a></li> <li><a href="https://www.chatsfriends.com/chat-venezuela" title="venezuela">Venezuela</a></li> <li><a href="https://www.chatsfriends.com/chat-argentina" title="argentina">Argentina</a></li> <li><a href="https://www.chatsfriends.com/chat-mexico" title="mexico">Mexico</a></li> </ul> </div> <div id="list4" class="col-md-3 Resources1 well well-sm"> <h3 class="ribbon">Otras salas</h3><hr> <ul> <li><a href="https://www.chatsfriends.com/chat-de-13-a-18-anos" title="13 a 18">13 a 18</a></li> <li><a href="https://www.chatsfriends.com/chat-amigos" title="amigos">Amigos</a></li> </ul> </div></nav> <div style="text-align:center;" id="82526-31"><!-- <script defer src="//ads.themoneytizer.com/s/gen.js?type=31"></script><script defer src="//ads.themoneytizer.com/s/requestform.js?siteId=82526&formatId=31"></script></div> --> </div><hr> <div class="clearfix"></div> </div> <div class="clearfix"></div> </div></div><div class="movil"> <div class="col-md-5 banner-gridimg" style="margin-top:60px"> <div id="list4"> <aside > <div class="well well-sm"> <span>Lo + Destacado</span> <ul> <li><a href="https://www.chatsfriends.com/chat-camara" title="chat de CÃ¡mara"><i class="sprite sprite-camara"></i> CÃ¡mara</a></li> <li><a href="https://www.chatsfriends.com/chat-terra" title="chat de terra"><i class="sprite sprite-camara"></i> Terra</a></li> <li><a href="https://www.chatsfriends.com/chat-hispano" title="chat de hispano"><i class="sprite sprite-hispano"></i> hispano</a></li> <li><a href="https://www.chatsfriends.com/chat-mas-de-40" title="chat de Mas de 40"><i class="sprite sprite-mas-de-40"></i> Mas de 40</a></li> <li><a href="https://www.chatsfriends.com/chat-chicas" title="chat de Chicas"><i class="sprite sprite-chicas"></i> Chicas</a></li> <li><a href="https://www.chatsfriends.com/chat-adolescentes" title="chat de Adolescentes"><i class="sprite sprite-adolescentes"></i> Adolescentes</a></li> <li><a href="https://www.chatsfriends.com/chat-mas-de-60" title="chat de MÃ¡s de 60"><i class="sprite sprite-mas-de-60"></i> MÃ¡s de 60</a></li> <li><a href="https://www.chatsfriends.com/chat-madrid" title="chat de Madrid"><i class="sprite sprite-madrid"></i> Madrid</a></li> <li><a href="https://www.chatsfriends.com/chat-bogota" title="chat de BogotÃ¡"><i class="sprite sprite-bogota"></i> BogotÃ¡</a></li> <li><a href="https://www.chatsfriends.com/chat-anonimo" title="chat de Anonimo"><i class="sprite sprite-anonimo"></i> Anonimo</a></li> </ul> </div> <div id="82526-3"><!-- <script defer src="//ads.themoneytizer.com/s/gen.js?type=3"></script><script defer src="//ads.themoneytizer.com/s/requestform.js?siteId=82526&formatId=3"></script></div> --> </aside> </div></div><div class="clearfix"></div> </div><article><script type="text/javascript"> $(document).ready(function(){ $('.ps').each(function(){ var anchor = $(this).text(); var href = $(this).attr('rel'); $(this).replaceWith('<a href="'+href+'">'+anchor+'</a>'); }); }); function setLocation(w3){ window.location=w3; };</script><footer> <div class="Resources-section" style="background: #88d074;margin-top: 40px;"> <div class="container"> <div class="col-md-3 Resources1"> <span>Nosotros</span> <ul><li><a href="https://www.chatsfriends.com/politica-de-privacidad.php">Politica de Privacidad</span></li><li><a href="https://www.chatsfriends.com/condiciones-de-uso.php">Aviso Legal / Condiciones de Uso</span></li><li><a href="https://www.chatsfriends.com/quienes-somos.php">Quienes somos</span></li><li><a href="https://www.chatsfriends.com/ayuda">ayuda</span></li> </ul> </div> <div class="col-md-3 Resources1"> <span>social</span> <ul> <li><a href="https://www.facebook.com/chatsfriends" rel="nofollow" target="_blank">Facebook</span></li> <li><a href="https://twitter.com/chatsfriends" target="_blank">Twitter</span></li> <li><a href="https://plus.google.com/+chatsfriends" alt="Google+" target="_blank">Google+</span></li> </ul> </div> <div class="clearfix"></div> </div> </div> <div class="footer-section"> <div class="container"> <div class="footer-top"> <p> Copyright &copy;2015 Todos los derechos reservados por : Chatsfriends </p> </div> </span></a> </div> </div><style>.well-sm { padding: 9px; border-radius: 3px;
+}
+.well { min-height: 20px; padding: 19px; margin-bottom: 20px; background-color: #f5f5f5; border: 1px solid #e3e3e3; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05); box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+a.subsalas:hover, a.subsalas:focus { text-decoration: none; color: #555555; background-color: #f5f5f5;
+}
+.projects-section h3 { font-size: 1.2em; margin: 15px;
+}
+@media only screen and (max-width: 768px){
+.Resources1 { float: left; width: 100%;
+}
+}</style><!-- <div id="82526-5"><script src="//ads.themoneytizer.com/s/gen.js?type=5"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82526&formatId=5"></script></div> --></footer> </body></html>
